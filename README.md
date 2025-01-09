@@ -2,11 +2,17 @@
 
 This is a web application built with react. It will allow users to send requests to backend API and GET, POST, PUT and DELETE.
 
+- [Features](#features)
 - [Installation](#installation)
 - [Backend Repository](#backend)
 - [API Endpoints](#api-endpoints)
-- [Usage](#usage)
 - [License](#license)
+
+## Features
+
+- User-friendly interface for managing data
+- Integration with the EduTrack API for seamless data synchronization
+- Real-time updates and responsive design
 
 ## Installation
 
@@ -26,7 +32,20 @@ This is a web application built with react. It will allow users to send requests
 
 https://github.com/duanegero/EduTrackAPI.git
 
-In the project directory, you can run:
+## API Endpoints
+
+The application intteracts with endpoints hosted by the backend api.
+
+- GET `/students` - Get all students
+- GET `/students/:grade` - Get all students in grade level
+- POST `/students` - Create new student
+- PUT `/students/:id` - Update student by ID
+- DELETE `/students/:id` - Delete student by ID
+
+- GET `/grades/:id` - Get student grades by ID
+- PUT `/grades/:id` - Update student grades by ID
+
+Visit the [EduTrack API Docs](https://github.com/duanegero/EduTrackAPI.git) for more details.
 
 ## License
 
