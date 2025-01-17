@@ -1,0 +1,37 @@
+EduTrack Docker 
+Network:
+docker network create EduTrack-network
+
+DB:
+docker run -d --name EduTrack-Container --network EduTrack-network -e POSTGRES_USER=duane -e POSTGRES_PASSWORD=edutrack321 -e POSTGRES_DB=EduTrack-Database -v edu_track_data:/var/lib/postgresql/data -p 6060:5432 postgres
+
+Queries:
+CREATE TABLE users (
+    id SERIAL PRIMARY KEY, 
+    created_at TIMESTAMP WITHOUT TIME ZONE DEFAULT CURRENT_TIMESTAMP,
+    username VARCHAR,
+    password VARCHAR
+);
+CREATE TABLE students (
+    studentid SERIAL PRIMARY KEY,
+    dob DATE NOT NULL,
+    lastname VARCHAR(255) NOT NULL,
+    firstname VARCHAR(255) NOT NULL,
+    grade VARCHAR(50) NOT NULL
+);
+CREATE TABLE student_grades (
+    id SERIAL PRIMARY KEY,
+    student_id INTEGER NOT NULL,
+    math NUMERIC,
+    english NUMERIC,
+    gym NUMERIC,
+    science NUMERIC,
+    FOREIGN KEY (student_id) REFERENCES students(studentid) ON DELETE CASCADE
+);
+
+API:
+docker build -t student-api:latest .
+
+docker run -d -p 6061:3003 -e API_KEY=27039c190d5c1e1f2889cefe5f21152c --name EduTrackAPI --network EduTrack-network student-api:latest
+
+Frontend: docker build -t student-frontend-app .  docker run -d --name EduTrack-frontend --network EduTrack-network -p 3000:80 student-frontend-app:latest

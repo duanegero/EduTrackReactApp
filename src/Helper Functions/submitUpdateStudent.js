@@ -1,5 +1,5 @@
 import axios from "axios"; //importing axios to send api requests
-const apiUrl = "http://localhost:3003"; //creating varible for api url
+const apiUrl = "http://localhost:6061"; //creating varible for api url
 
 //defining async function wth passed in variables
 const submitUpdateStudent = async (

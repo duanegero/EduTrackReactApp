@@ -1,5 +1,5 @@
 import axios from "axios"; //importing axios to sen request to api
-const apiUrl = "http://localhost:3003"; //creating varible for api url
+const apiUrl = "http://localhost:6061"; //creating varible for api url
 
 //defining async function with passed in variables
 const submitUpdateGrades = async (

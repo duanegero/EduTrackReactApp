@@ -10,7 +10,7 @@ import handleGradeChange from "../Helper Functions/handleGradeChange";
 import deleteStudent from "../Helper Functions/deleteStudent";
 
 //setting a variable to handle api url
-const apiUrl = "http://localhost:3003";
+const apiUrl = "http://localhost:6061";
 
 export default function GetStudentsTable() {
   //state to hold and set the grade

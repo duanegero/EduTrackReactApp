@@ -1,5 +1,5 @@
 import axios from "axios"; //imporing axios to make api calls
-const apiUrl = "http://localhost:3003"; //creating varible for api url
+const apiUrl = "http://localhost:6061"; //creating varible for api url
 
 //creating a async function passing variables
 const submitLogin = async (
